@@ -15,7 +15,8 @@ concurrency:
 
 jobs:
   keepalive:
-    if: github.repository == 'kuchikamizake05/porto'
+    # Stable across repository renames; do not run on forks.
+    if: github.repository_id == '1149827160'
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:

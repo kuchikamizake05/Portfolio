@@ -4,7 +4,7 @@ The GitHub Actions workflow `.github/workflows/supabase-keepalive.yml` runs a re
 
 ## Activation
 
-1. Add the repository Actions secret `SUPABASE_KEEPALIVE_DATABASE_URL` in `kuchikamizake05/porto`. Use the Supabase PostgreSQL pooler connection string (IPv4-compatible) for this portfolio's existing database. Never commit or paste its value into a workflow or log. A login with only connection permission suffices for this query.
+1. Add the repository Actions secret `SUPABASE_KEEPALIVE_DATABASE_URL` in `kuchikamizake05/Portfolio` (formerly `porto`). Use the Supabase PostgreSQL pooler connection string (IPv4-compatible) for this portfolio's existing database. Never commit or paste its value into a workflow or log. A login with only connection permission suffices for this query.
 2. Commit the workflow and `scripts/supabase-keepalive/` files, including the lockfile, to the repository's default branch. Publishing a branch alone does not enable the schedule.
 3. Open Actions → Supabase keepalive → Run workflow, and confirm the Query Supabase step reports success. Local tests do not prove GitHub-hosted runners can reach the database.
 4. Ensure failed Actions run notifications are enabled in your GitHub notification preferences. No separate message-sending integration is included.
@@ -37,3 +37,4 @@ Local preparation does not activate the remote schedule. Verify a successful man
 - Four automated tests passed: invalid configuration, verified TLS/read-only query, transient retry/cleanup, and persistent failure without exposing connection details.
 - A real local check using the existing portfolio database connection succeeded with TLS certificate verification enabled.
 - The GitHub repository is public, its default branch is `main`, and the keepalive secret was not present when inspected. No secret was uploaded and no workflow was published during local preparation.
+- After approval, the secret was stored and the workflow published to `main`. GitHub redirected the old repository name to `kuchikamizake05/Portfolio`; the workflow now checks its stable repository ID so future renames do not disable it.
