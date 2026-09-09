@@ -5,6 +5,7 @@ import { m as motion, useSpring, useMotionValue } from "motion/react";
 import { apiGet } from "@/app/lib/api";
 import Link from "next/link";
 import Image from "next/image";
+import { getProjectPreview } from "@/app/lib/project-preview";
 
 type Project = {
   id: number;
@@ -17,6 +18,7 @@ type Project = {
 };
 
 function ProjectCard({ project }: { project: Project }) {
+  const preview = getProjectPreview(project.title, project.imageUrl);
   const cardRef = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
   const mx = useMotionValue(0);
@@ -61,20 +63,20 @@ function ProjectCard({ project }: { project: Project }) {
         <div className="absolute inset-0 bg-linear-to-r from-transparent via-blue-600/5 to-transparent opacity-0 group-hover:opacity-30 transition-opacity duration-500 z-[1]" />
 
         {/* Background Image on Hover */}
-        {project.imageUrl && (
+        {preview && (
           <div
-            className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-0"
+            className="absolute inset-0 opacity-0 group-hover:opacity-35 transition-opacity duration-700 pointer-events-none z-0"
             style={{
               maskImage: "linear-gradient(to right, transparent 0%, black 40%, black 60%, transparent 100%)",
               WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 40%, black 60%, transparent 100%)",
             }}
           >
             <Image
-              src={project.imageUrl}
+              src={preview}
               alt=""
               fill
               sizes="100vw"
-              className="object-cover object-center"
+              className="object-cover object-center blur-sm brightness-75 scale-105"
             />
           </div>
         )}
@@ -110,7 +112,7 @@ function ProjectCard({ project }: { project: Project }) {
       </Link>
 
       {/* Floating Popup Image */}
-      {project.imageUrl && (
+      {preview && (
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{
@@ -124,7 +126,7 @@ function ProjectCard({ project }: { project: Project }) {
           <div
             className="w-64 h-44 rounded-xl overflow-hidden border border-white/10 shadow-2xl shadow-black/50 rotate-3 group-hover:rotate-0 transition-transform duration-500">
             <Image
-              src={project.imageUrl}
+              src={preview}
               alt={project.title}
               width={256}
               height={176}

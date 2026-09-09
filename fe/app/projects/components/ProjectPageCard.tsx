@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { getProjectPreview } from "@/app/lib/project-preview";
 import { m as motion } from "motion/react";
 
 type ProjectPageCardProps = {
@@ -67,6 +68,7 @@ export default function ProjectPageCard({
   repoUrl,
   siteUrl,
 }: ProjectPageCardProps) {
+  const preview = getProjectPreview(title, imageUrl);
   const techArray =
     typeof tech === "string"
       ? tech
@@ -97,9 +99,9 @@ export default function ProjectPageCard({
     >
       {/* Thumbnail */}
       <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[16px] bg-white/5">
-        {imageUrl ? (
+        {preview ? (
           <Image
-            src={imageUrl}
+            src={preview}
             alt={title}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
