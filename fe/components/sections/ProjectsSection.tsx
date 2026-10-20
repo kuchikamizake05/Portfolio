@@ -87,7 +87,7 @@ function ProjectCard({ project }: { project: Project }) {
               {project.title}
             </h3>
             {project.description.trim() && (
-              <p className="text-sm md:text-base text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
+              <p className="line-clamp-2 text-sm md:text-base text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
                 {project.description}
               </p>
             )}

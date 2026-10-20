@@ -11,7 +11,6 @@ import ContactSection from "@/components/sections/ContactSection";
 import ProfileCard from "@/components/ui/ProfileCard";
 import { TypingAnimation } from "@/components/ui/typing-animation";
 import RotatingText from "@/components/ui/rotating-text";
-import Text3DFlip from "@/components/ui/text-3d-flip";
 import LightRays from "@/components/ui/LightRays";
 
 type Profile = {
@@ -24,10 +23,9 @@ type Profile = {
 const PROFILE: Profile = {
   name: ["Faaid Sakhaa", "Kuchikamizake."],
   roles: [
-    "Vibe Coder",
-    "Software Engineer",
-    "Cyber Security",
-    "AI/ML Enthusiast",
+    "Backend Developer",
+    "Full-Stack Developer",
+    "Payment Systems Builder",
   ],
   stack: ["Next.js", "Express", "TypeScript"],
 };
@@ -102,40 +100,10 @@ export default function HomeClient() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="max-w-4xl mx-auto w-full relative z-10 flex flex-col md:flex-row items-center md:items-start gap-12"
+          className="max-w-4xl mx-auto w-full relative z-10 flex flex-col md:flex-row items-center gap-12"
         >
           {/* Text Content */}
-          <div className="flex-1 gap-6 order-2 md:order-1 text-center md:text-left flex flex-col items-center md:items-start md:pt-15 w-full">
-            {/* Greeting */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{
-                delay: 2,
-                duration: 0.8,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-              className="inline-flex items-center gap-2 text-blue-400 text-[12px] font-bold uppercase tracking-[0.2em]"
-            >
-              <span className="relative flex size-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full size-2 bg-blue-500"></span>
-              </span>
-              <motion.span
-                animate={{
-                  backgroundPosition: ["-200% 0", "200% 0"],
-                }}
-                transition={{
-                  duration: 10,
-                  repeat: Infinity,
-                  ease: "linear",
-                }}
-                className="bg-clip-text text-transparent bg-linear-to-r from-blue-500 via-blue-300 to-blue-500 bg-size-[200%_100%]"
-              >
-                Long life learner
-              </motion.span>
-            </motion.div>
-
+          <div className="flex-1 gap-6 order-2 md:order-1 text-center md:text-left flex flex-col items-center md:items-start md:translate-y-8 w-full">
             {/* Name & Title */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -152,7 +120,7 @@ export default function HomeClient() {
                 typeSpeed={100}
                 deleteSpeed={50}
                 pauseDelay={2000}
-                delay={800} // Start typing after greeting is visible
+                delay={800}
                 cursorStyle="line"
                 startOnView={false}
                 loop
@@ -186,40 +154,6 @@ export default function HomeClient() {
                   style={{ borderRadius: "0.75rem" }}
                 />
               </motion.p>
-              <motion.div
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  delay: 2.55,
-                  duration: 0.7,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-              >
-                <div className="inline-flex flex-col items-center md:items-start w-full">
-                  {/* Elegant Responsive Gradient Separator Line - Matches width of Text3DFlip */}
-                  <div className="h-[1.5px] w-full bg-gradient-to-r from-transparent via-white/50 to-transparent md:from-white/50 md:to-transparent mb-4" />
-
-                  <div className="hidden md:block">
-                    <Text3DFlip
-                      className="font-sans text-xl sm:text-2xl md:text-3.25xl font-normal"
-                    textClassName={[
-                      "font-serif italic text-white tracking-wide font-normal normal-case",
-                      "font-sans text-white tracking-widest font-extrabold uppercase"
-                    ]}
-                    flipTextClassName={[
-                      "font-serif italic text-white font-normal normal-case",
-                      "font-sans text-white font-black uppercase"
-                    ]}
-                    rotateDirection="top"
-                    staggerDuration={0.03}
-                    staggerFrom="first"
-                    transition={{ type: "spring", damping: 25, stiffness: 160 }}
-                  >
-                    Stay hungry Stay foolish
-                    </Text3DFlip>
-                  </div>
-                </div>
-              </motion.div>
             </motion.div>
           </div>
 

@@ -3,7 +3,7 @@
 import ScrollVelocity from "@/components/ui/ScrollVelocity";
 
 const text =
-  "FAAID SAKHAA ✦ KUCHIKAMIZAKE ✦ WEB DEVELOPER ✦ CYBER SECURITY ENTHUSIAST ✦ AI ENTHUSIAST";
+  "FAAID SAKHAA ✦ KUCHIKAMIZAKE ✦ BACKEND ENGINEERING ✦ FULL-STACK DEVELOPMENT ✦ PAYMENT SYSTEMS";
 
 export default function MarqueeSection() {
   return (

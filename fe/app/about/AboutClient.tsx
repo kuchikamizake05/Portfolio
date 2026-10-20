@@ -74,14 +74,11 @@ export default function AboutClient() {
                   </span>
                 </h1>
                 <p className="text-base md:text-lg text-zinc-400 font-light leading-relaxed max-w-xl">
-                  I am a developer with a strong focus on building
-                  <span className="text-white font-medium"> performant </span>
-                  and{" "}
-                  <span className="text-blue-400 font-medium">
-                    thoughtfully crafted
-                  </span>{" "}
-                  web experiences, combining solid engineering with refined
-                  visual details.
+                  I&apos;m an Information Engineering undergraduate at Universitas
+                  Gadjah Mada, building backend services, REST APIs, and full-stack
+                  applications. My interests include payment systems, with hands-on
+                  work in digital wallets, double-entry ledgers, and cross-border
+                  transfers.
                 </p>
               </div>
             </div>

@@ -12,24 +12,10 @@ const slides = [
     content: (
       <div className="space-y-4">
         <p className="text-zinc-300 font-light leading-relaxed md:text-xl text-lg">
-          I'm an{" "}
-          <span className="text-white font-bold italic">
-            IT student &amp; software engineer
-          </span>{" "}
-          where{" "}
-          <span className="text-blue-400 font-semibold italic">
-            development
-          </span>
-          ,{" "}
-          <span className="text-emerald-400 font-semibold italic">
-            security
-          </span>
-          , and{" "}
-          <span className="text-purple-400 font-semibold italic">
-            AI/ML
-          </span>{" "}
-          converge. I build reliable, well-engineered digital systems with clean
-          interfaces and a security-first mindset.
+          I&apos;m an Information Engineering undergraduate at Universitas Gadjah
+          Mada focused on backend engineering, full-stack development, and payment
+          systems. I build REST APIs and database-backed applications using Java,
+          Spring Boot, Go, TypeScript, Python, and PostgreSQL.
         </p>
         <p className="text-zinc-400 font-light leading-relaxed text-base">
           Curious about how systems work under the hood, I design solutions
@@ -70,7 +56,7 @@ const slides = [
         <ul className="space-y-3">
           {[
             "Build secure and well-engineered web applications",
-            "Deepen expertise in cybersecurity and CTF challenges",
+            "Deepen expertise in payment systems, ledgers, and transaction processing",
             "Understand systems at both application and infrastructure levels",
           ].map((goal, i) => (
             <li key={i} className="flex items-center gap-3 text-zinc-400">

@@ -1,52 +1,20 @@
 "use client";
 
-import { useRef } from "react";
-import { m as motion } from "motion/react";
 import Link from "next/link";
 import CircularGallery from "@/components/ui/circular-gallery";
 import { ShimmerButton } from "@/components/ui/shimmer-button";
-import VariableProximity, {
-  type VariableProximitySegment,
-} from "@/components/ui/VariableProximity";
+const focusAreas = ["Backend Engineering", "Full-Stack Development", "Payment Systems"];
 
-const focusAreas = [
-  "Software Development",
-  "Cyber Security",
-  "AI/ML Development",
-];
-
-const aboutText =
-  "I'm an IT student & software engineer at the intersection of development, cybersecurity, and AI/ML. I build secure, reliable web apps - clean interfaces, maintainable systems, security-first. Always.";
-
-const aboutTextSegments: VariableProximitySegment[] = [
-  { text: "I'm an " },
-  {
-    text: "IT student & software engineer",
-    className: "text-white italic",
-  },
-  { text: " at the intersection of " },
-  {
-    text: "development",
-    className: "text-blue-400 italic",
-  },
-  { text: ", " },
-  {
-    text: "cybersecurity",
-    className: "text-emerald-400 italic",
-  },
-  { text: ", and " },
-  {
-    text: "AI/ML",
-    className: "text-purple-400 italic",
-  },
-  {
-    text: ". I build secure, reliable web apps - clean interfaces, maintainable systems, ",
-  },
-  {
-    text: "security-first",
-    className: "text-white italic",
-  },
-  { text: ". Always." },
+const aboutTextSegments: { text: string; className?: string }[] = [
+  { text: "I'm an Information Engineering undergraduate at " },
+  { text: "Universitas Gadjah Mada", className: "text-white italic" },
+  { text: " building " },
+  { text: "backend services", className: "text-blue-400 italic" },
+  { text: ", REST APIs, and " },
+  { text: "full-stack applications", className: "text-emerald-400 italic" },
+  { text: ". I'm interested in " },
+  { text: "payment systems", className: "text-purple-400 italic" },
+  { text: ", from wallet and ledger workflows to cross-border transfers." },
 ];
 
 const galleryItems = [
@@ -60,8 +28,6 @@ const galleryItems = [
 ];
 
 export default function AboutSection() {
-  const aboutTextRef = useRef<HTMLDivElement | null>(null);
-
   return (
     <section
       id="about-me"
@@ -84,33 +50,14 @@ export default function AboutSection() {
         </div>
 
         <div className="flex justify-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="w-full max-w-3xl space-y-4 text-center"
-          >
-            <motion.div
-              ref={aboutTextRef}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="relative text-lg font-medium leading-relaxed text-white/80 md:text-xl"
-            >
-              <VariableProximity
-                label={aboutText}
-                segments={aboutTextSegments}
-                className="inline-block text-balance text-white/82"
-                fromFontVariationSettings="'wght' 420, 'opsz' 14"
-                toFontVariationSettings="'wght' 850, 'opsz' 32"
-                containerRef={aboutTextRef}
-                radius={100}
-                falloff="exponential"
-                style={{ fontFamily: "var(--font-geist-sans), sans-serif" }}
-              />
-            </motion.div>
+          <div className="w-full max-w-3xl space-y-4 text-center">
+            <p className="text-balance text-lg font-medium leading-relaxed text-white/80 md:text-xl">
+              {aboutTextSegments.map((segment, index) => (
+                <span key={index} className={segment.className}>
+                  {segment.text}
+                </span>
+              ))}
+            </p>
 
             <div className="mx-auto mb-5 mt-6 flex max-w-3xl flex-wrap items-center justify-center gap-3 md:mb-6 md:gap-4">
               {focusAreas.map((area) => (
@@ -151,7 +98,7 @@ export default function AboutSection() {
                 <span className="relative z-10">More About Me</span>
               </Link>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

@@ -4,22 +4,22 @@ import { cn } from "@/lib/utils";
 import Marquee3D from "@/components/ui/marquee-3d";
 
 const techs = [
-  { icon: "devicon-python-plain", name: "Python", color: "text-blue-500" },
-  { icon: "devicon-tailwindcss-plain", name: "Tailwind", color: "text-sky-400" },
-  { icon: "devicon-typescript-plain", name: "TypeScript", color: "text-blue-600" },
-  { icon: "devicon-nodejs-plain", name: "Node.js", color: "text-green-500" },
-  { icon: "devicon-mysql-plain", name: "MySQL", color: "text-indigo-500" },
+  { icon: "devicon-java-plain", name: "Java", color: "text-orange-400" },
+  { icon: "devicon-spring-original", name: "Spring Boot", color: "text-green-500" },
+  { icon: "devicon-go-original-wordmark", name: "Go", color: "text-cyan-400" },
+  { icon: "devicon-postgresql-plain", name: "PostgreSQL", color: "text-blue-400" },
+  { icon: "devicon-redis-plain", name: "Redis", color: "text-red-500" },
+  { icon: "devicon-rabbitmq-original", name: "RabbitMQ", color: "text-orange-500" },
   { icon: "devicon-docker-plain", name: "Docker", color: "text-blue-400" },
-  { icon: "devicon-supabase-plain", name: "Supabase", color: "text-green-500" },
-  { icon: "devicon-cplusplus-plain", name: "C++", color: "text-blue-500" },
-  { icon: "devicon-javascript-plain", name: "JavaScript", color: "text-yellow-400" },
-  { icon: "devicon-github-original", name: "GitHub", color: "text-white" },
-  { icon: "devicon-react-original", name: "React", color: "text-blue-500" },
-  { icon: "devicon-mongodb-plain", name: "MongoDB", color: "text-green-500" },
-  { icon: "devicon-amazonwebservices-plain", name: "AWS", color: "text-white" },
-  { icon: "devicon-git-plain", name: "Git", color: "text-red-500" },
+  { icon: "devicon-python-plain", name: "Python", color: "text-yellow-400" },
+  { icon: "devicon-fastapi-plain", name: "FastAPI", color: "text-teal-400" },
+  { icon: "devicon-react-original", name: "React", color: "text-sky-400" },
   { icon: "devicon-nextjs-plain", name: "Next.js", color: "text-white" },
-  { icon: "devicon-googlecloud-plain", name: "GCP", color: "text-white" },
+  { icon: "devicon-typescript-plain", name: "TypeScript", color: "text-blue-500" },
+  { icon: "devicon-javascript-plain", name: "JavaScript", color: "text-yellow-400" },
+  { icon: "devicon-tailwindcss-plain", name: "Tailwind CSS", color: "text-sky-400" },
+  { icon: "devicon-supabase-plain", name: "Supabase", color: "text-green-500" },
+  { icon: "devicon-git-plain", name: "Git", color: "text-red-500" },
 ];
 
 function TechCard({
